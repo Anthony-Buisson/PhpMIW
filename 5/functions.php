@@ -89,8 +89,13 @@ function resizeImg($filepath, $thumbnailWitdh=null, $thumbnailHeight = null){
 
     if(is_null($thumbnailWitdh)){
         $thumbnailWitdh = floor($thumbnailHeight*$imgsize[0]/$imgsize[1]);
-    }else{
+    }else if(is_null($thumbnailHeight)){
         $thumbnailHeight = floor($thumbnailWitdh*$imgsize[1]/$imgsize[0]);
+    }else{
+        if($thumbnailHeight > $imgsize[1]){}
+        if($thumbnailHeight < $imgsize[1]){}
+        if($thumbnailWitdh > $imgsize[0]){}
+        if($thumbnailWitdh > $imgsize[0]){}
     }
 
     //on créé une image "vide" (une image noire)
